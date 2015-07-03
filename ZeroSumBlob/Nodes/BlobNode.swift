@@ -4,12 +4,15 @@ import UIKit
 
 class BlobNode: SKNode {
     var blobRadius: CGFloat
+    var moveSpeed: CGFloat
 
     init(color blobColor: UIColor, playerName: String) {
         self.blobRadius = 15
+        self.moveSpeed = 100
         super.init()
 
         self.physicsBody = SKPhysicsBody(circleOfRadius: self.blobRadius)
+        self.physicsBody?.linearDamping = 0
 
         let body: SKShapeNode = SKShapeNode(circleOfRadius: self.blobRadius);
         body.fillColor = blobColor
@@ -29,6 +32,14 @@ class BlobNode: SKNode {
     }
 
     func moveTowardPoint(point: CGPoint) {
-        self.physicsBody!.velocity = CGVector(dx: point.x - self.position.x, dy: point.y - self.position.y)
+        let dx = point.x - self.position.x
+        let dy = point.y - self.position.y
+        let angle = atan2(dy, dx)
+
+        self.physicsBody?.velocity = CGVector(dx: self.moveSpeed * cos(angle), dy: self.moveSpeed * sin(angle))
+    }
+
+    func stopMoving() {
+        self.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
     }
 }

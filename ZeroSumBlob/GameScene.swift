@@ -27,6 +27,11 @@ class GameScene: SKScene {
         self.moveToward(touches.first!)
     }
 
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let blob: BlobNode = self.childNodeWithName("//me") as! BlobNode
+        blob.stopMoving()
+    }
+
     func moveToward(touch: UITouch) {
         let blob: BlobNode = self.childNodeWithName("//me") as! BlobNode
         let touchPoint: CGPoint = touch.locationInNode(self.childNodeWithName("background")!)
