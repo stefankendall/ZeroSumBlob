@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		545902D7E1DD1EF9655B728E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5459023CB7B72965A1B2CDF2 /* Info.plist */; };
+		545902F9730EAF21A79C510A /* BlobNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54590FF1D97CCDC8DFD27A7A /* BlobNode.swift */; };
+		5459054B2A1B0265A09C8D8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54590185868E22CE3A839475 /* AppDelegate.swift */; };
+		5459057646189FDD8224D9E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54590C005905EB5B1BC520F5 /* LaunchScreen.storyboard */; };
+		545908E33843A10FC522A91F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545908BA69021CC523829E28 /* Assets.xcassets */; };
+		54590BBDBA7B4C97D75EE394 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545907400860DAD8D043513A /* GameScene.swift */; };
+		54590C159CA2170266A59EA4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 545900F101D1F13BAEF52F06 /* Info.plist */; };
+		54590E064524E86E6810953C /* ZeroSumBlobTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545909F03E2899656FE5BCA8 /* ZeroSumBlobTests.swift */; };
+		54590E49CA31051150F13BD9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5459055A7CD52C22843CDA31 /* GameViewController.swift */; };
+		54590E8A8E45723DB18C4AF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54590A0030A0D7459CC88314 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		54590300AE1A7F7B8BB21369 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54590454321AFEA2DBA55C87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 54590797732551E1BF3C6D9A;
+			remoteInfo = ZeroSumBlob;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		545900F101D1F13BAEF52F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		54590185868E22CE3A839475 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5459023CB7B72965A1B2CDF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		5459055A7CD52C22843CDA31 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		545907400860DAD8D043513A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		545908BA69021CC523829E28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		545908F752A5B1282E766A8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		545909F03E2899656FE5BCA8 /* ZeroSumBlobTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroSumBlobTests.swift; sourceTree = "<group>"; };
+		54590AAD34A12DA73A3726FC /* ZeroSumBlob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZeroSumBlob.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		54590B77DCCE42C32299D7E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		54590F7DA139BC2A81D0069B /* ZeroSumBlobTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZeroSumBlobTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		54590FF1D97CCDC8DFD27A7A /* BlobNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlobNode.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		545903DF5E3710F0470E114B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54590695956AC1ECEA5CBF9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		545904098DE7A7EF8F87F095 /* ZeroSumBlobTests */ = {
+			isa = PBXGroup;
+			children = (
+				5459023CB7B72965A1B2CDF2 /* Info.plist */,
+				545909F03E2899656FE5BCA8 /* ZeroSumBlobTests.swift */,
+			);
+			path = ZeroSumBlobTests;
+			sourceTree = "<group>";
+		};
+		545905CDD208698C58CAF93C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				54590AAD34A12DA73A3726FC /* ZeroSumBlob.app */,
+				54590F7DA139BC2A81D0069B /* ZeroSumBlobTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5459060F8455866631EC78CE /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				54590FF1D97CCDC8DFD27A7A /* BlobNode.swift */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		545909DC496C431F82C032A2 /* ZeroSumBlob */ = {
+			isa = PBXGroup;
+			children = (
+				545900F101D1F13BAEF52F06 /* Info.plist */,
+				545908BA69021CC523829E28 /* Assets.xcassets */,
+				54590C005905EB5B1BC520F5 /* LaunchScreen.storyboard */,
+				54590185868E22CE3A839475 /* AppDelegate.swift */,
+				54590A0030A0D7459CC88314 /* Main.storyboard */,
+				545907400860DAD8D043513A /* GameScene.swift */,
+				5459055A7CD52C22843CDA31 /* GameViewController.swift */,
+				5459060F8455866631EC78CE /* Nodes */,
+			);
+			path = ZeroSumBlob;
+			sourceTree = "<group>";
+		};
+		54590D61AA5846F6B68C4E0F = {
+			isa = PBXGroup;
+			children = (
+				545905CDD208698C58CAF93C /* Products */,
+				545909DC496C431F82C032A2 /* ZeroSumBlob */,
+				545904098DE7A7EF8F87F095 /* ZeroSumBlobTests */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		54590797732551E1BF3C6D9A /* ZeroSumBlob */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54590B3A29E206EC5D8256BB /* Build configuration list for PBXNativeTarget "ZeroSumBlob" */;
+			buildPhases = (
+				545904C54AC1789DFF60C736 /* Sources */,
+				54590695956AC1ECEA5CBF9D /* Frameworks */,
+				5459024F53B31767B064AA26 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZeroSumBlob;
+			productName = ZeroSumBlob;
+			productReference = 54590AAD34A12DA73A3726FC /* ZeroSumBlob.app */;
+			productType = "com.apple.product-type.application";
+		};
+		54590BF06CE9FD55995868AB /* ZeroSumBlobTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54590FC5EF6841C3282E5545 /* Build configuration list for PBXNativeTarget "ZeroSumBlobTests" */;
+			buildPhases = (
+				54590414521BDFA2FFBB090D /* Sources */,
+				545903DF5E3710F0470E114B /* Frameworks */,
+				545908239E5EA3BE2994F82E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				54590E67AC62D3C4DFCA5C13 /* PBXTargetDependency */,
+			);
+			name = ZeroSumBlobTests;
+			productName = ZeroSumBlobTests;
+			productReference = 54590F7DA139BC2A81D0069B /* ZeroSumBlobTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		54590454321AFEA2DBA55C87 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				ORGANIZATIONNAME = "Usable Design LLC";
+			};
+			buildConfigurationList = 54590BF9A665F2AF5B047D6C /* Build configuration list for PBXProject "ZeroSumBlob" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 54590D61AA5846F6B68C4E0F;
+			productRefGroup = 545905CDD208698C58CAF93C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				54590797732551E1BF3C6D9A /* ZeroSumBlob */,
+				54590BF06CE9FD55995868AB /* ZeroSumBlobTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5459024F53B31767B064AA26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54590C159CA2170266A59EA4 /* Info.plist in Resources */,
+				545908E33843A10FC522A91F /* Assets.xcassets in Resources */,
+				5459057646189FDD8224D9E4 /* LaunchScreen.storyboard in Resources */,
+				54590E8A8E45723DB18C4AF2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		545908239E5EA3BE2994F82E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				545902D7E1DD1EF9655B728E /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		54590414521BDFA2FFBB090D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54590E064524E86E6810953C /* ZeroSumBlobTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		545904C54AC1789DFF60C736 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5459054B2A1B0265A09C8D8F /* AppDelegate.swift in Sources */,
+				54590BBDBA7B4C97D75EE394 /* GameScene.swift in Sources */,
+				54590E49CA31051150F13BD9 /* GameViewController.swift in Sources */,
+				545902F9730EAF21A79C510A /* BlobNode.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		54590E67AC62D3C4DFCA5C13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 54590797732551E1BF3C6D9A /* ZeroSumBlob */;
+			targetProxy = 54590300AE1A7F7B8BB21369 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		54590A0030A0D7459CC88314 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				545908F752A5B1282E766A8E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		54590C005905EB5B1BC520F5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				54590B77DCCE42C32299D7E6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		54590308B28166917288B807 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ZeroSumBlob/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stefankendall.___PACKAGENAMEASRFC1034IDENTIFIER___";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		545908D557C1663D8B7077CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ZeroSumBlob/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stefankendall.___PACKAGENAMEASRFC1034IDENTIFIER___";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5459093D7A5F0A9FD86B94C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		54590BC42F434C4935F45F7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ZeroSumBlob.app/ZeroSumBlob";
+				INFOPLIST_FILE = ZeroSumBlobTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stefankendall.___PACKAGENAMEASRFC1034IDENTIFIER___";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		54590BDF21E769235535F221 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		54590C8E5C8FD114B1497000 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ZeroSumBlob.app/ZeroSumBlob";
+				INFOPLIST_FILE = ZeroSumBlobTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stefankendall.___PACKAGENAMEASRFC1034IDENTIFIER___";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		54590B3A29E206EC5D8256BB /* Build configuration list for PBXNativeTarget "ZeroSumBlob" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				545908D557C1663D8B7077CD /* Debug */,
+				54590308B28166917288B807 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		54590BF9A665F2AF5B047D6C /* Build configuration list for PBXProject "ZeroSumBlob" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54590BDF21E769235535F221 /* Debug */,
+				5459093D7A5F0A9FD86B94C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		54590FC5EF6841C3282E5545 /* Build configuration list for PBXNativeTarget "ZeroSumBlobTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54590BC42F434C4935F45F7C /* Debug */,
+				54590C8E5C8FD114B1497000 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 54590454321AFEA2DBA55C87 /* Project object */;
+}
