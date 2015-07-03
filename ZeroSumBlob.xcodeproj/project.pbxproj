@@ -14,6 +14,7 @@
 		545908E33843A10FC522A91F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545908BA69021CC523829E28 /* Assets.xcassets */; };
 		54590BBDBA7B4C97D75EE394 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545907400860DAD8D043513A /* GameScene.swift */; };
 		54590C159CA2170266A59EA4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 545900F101D1F13BAEF52F06 /* Info.plist */; };
+		54590C256D22D1B78A906E3F /* UIKColor+Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54590A8F8A2604888503FE2A /* UIKColor+Brightness.swift */; };
 		54590E064524E86E6810953C /* ZeroSumBlobTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545909F03E2899656FE5BCA8 /* ZeroSumBlobTests.swift */; };
 		54590E49CA31051150F13BD9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5459055A7CD52C22843CDA31 /* GameViewController.swift */; };
 		54590E8A8E45723DB18C4AF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54590A0030A0D7459CC88314 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		545908BA69021CC523829E28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		545908F752A5B1282E766A8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		545909F03E2899656FE5BCA8 /* ZeroSumBlobTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroSumBlobTests.swift; sourceTree = "<group>"; };
+		54590A8F8A2604888503FE2A /* UIKColor+Brightness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKColor+Brightness.swift"; sourceTree = "<group>"; };
 		54590AAD34A12DA73A3726FC /* ZeroSumBlob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZeroSumBlob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54590B77DCCE42C32299D7E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54590F7DA139BC2A81D0069B /* ZeroSumBlobTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZeroSumBlobTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		545902145B5F0181ECFC30FF /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				54590A8F8A2604888503FE2A /* UIKColor+Brightness.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
 		545904098DE7A7EF8F87F095 /* ZeroSumBlobTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +109,7 @@
 				545907400860DAD8D043513A /* GameScene.swift */,
 				5459055A7CD52C22843CDA31 /* GameViewController.swift */,
 				5459060F8455866631EC78CE /* Nodes */,
+				545902145B5F0181ECFC30FF /* Colors */,
 			);
 			path = ZeroSumBlob;
 			sourceTree = "<group>";
@@ -216,6 +227,7 @@
 				54590BBDBA7B4C97D75EE394 /* GameScene.swift in Sources */,
 				54590E49CA31051150F13BD9 /* GameViewController.swift in Sources */,
 				545902F9730EAF21A79C510A /* BlobNode.swift in Sources */,
+				54590C256D22D1B78A906E3F /* UIKColor+Brightness.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

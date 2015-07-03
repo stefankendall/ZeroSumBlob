@@ -3,11 +3,14 @@ import SpriteKit
 import UIKit
 
 class BlobNode: SKNode {
-    override init() {
+    init(name: String, color blobColor: UIColor) {
         super.init()
 
-        let body: SKShapeNode = SKShapeNode(circleOfRadius: 20);
-        body.fillColor = UIColor.greenColor()
+        self.name = name
+        let body: SKShapeNode = SKShapeNode(circleOfRadius: 15);
+        body.fillColor = blobColor
+        body.lineWidth = 3;
+        body.strokeColor = blobColor.lighterColorWithBrightnessFactor(-0.2)
         self.addChild(body)
     }
 
