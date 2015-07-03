@@ -8,7 +8,7 @@ class BlobNode: SKNode {
 
     init(color blobColor: UIColor, playerName: String) {
         self.blobRadius = 15
-        self.moveSpeed = 100
+        self.moveSpeed = 200
         super.init()
 
         self.physicsBody = SKPhysicsBody(circleOfRadius: self.blobRadius)

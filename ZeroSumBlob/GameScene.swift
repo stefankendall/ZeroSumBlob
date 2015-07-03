@@ -17,6 +17,12 @@ class GameScene: SKScene {
     }
 
     override func update(currentTime: CFTimeInterval) {
+        if let blob: SKNode = self.childNodeWithName("//me"),
+        let background: SKNode = self.childNodeWithName("background")! {
+            let converted: CGPoint = self.convertPoint(blob.position, toNode: self)
+            background.position = CGPoint(x: -converted.x + self.size.width / 2,
+                    y: -converted.y + self.size.height / 2)
+        }
     }
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -28,13 +34,15 @@ class GameScene: SKScene {
     }
 
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let blob: BlobNode = self.childNodeWithName("//me") as! BlobNode
-        blob.stopMoving()
+        if let blob: BlobNode = self.childNodeWithName("//me") as? BlobNode {
+            blob.stopMoving()
+        }
     }
 
     func moveToward(touch: UITouch) {
-        let blob: BlobNode = self.childNodeWithName("//me") as! BlobNode
-        let touchPoint: CGPoint = touch.locationInNode(self.childNodeWithName("background")!)
-        blob.moveTowardPoint(touchPoint)
+        if let blob: BlobNode = self.childNodeWithName("//me") as? BlobNode {
+            let touchPoint: CGPoint = touch.locationInNode(self.childNodeWithName("background")!)
+            blob.moveTowardPoint(touchPoint)
+        }
     }
 }
