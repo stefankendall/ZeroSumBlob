@@ -43,8 +43,4 @@ class BlobNode: SKNode {
             self.physicsBody?.velocity = CGVector(dx: self.moveSpeed * cos(angle), dy: self.moveSpeed * sin(angle))
         }
     }
-
-    func stopMoving() {
-        self.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
-    }
 }
