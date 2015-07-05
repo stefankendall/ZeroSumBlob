@@ -32,11 +32,16 @@ class BlobNode: SKNode {
     }
 
     func moveTowardPoint(point: CGPoint) {
-        let dx = point.x - self.position.x
-        let dy = point.y - self.position.y
+        let dx: CGFloat = point.x - self.position.x
+        let dy: CGFloat = point.y - self.position.y
+        let distance = hypot(dx, dy)
         let angle = atan2(dy, dx)
 
-        self.physicsBody?.velocity = CGVector(dx: self.moveSpeed * cos(angle), dy: self.moveSpeed * sin(angle))
+        if (distance < self.blobRadius) {
+            self.physicsBody?.velocity = CGVector(dx: distance * cos(angle), dy: distance * sin(angle))
+        } else {
+            self.physicsBody?.velocity = CGVector(dx: self.moveSpeed * cos(angle), dy: self.moveSpeed * sin(angle))
+        }
     }
 
     func stopMoving() {
