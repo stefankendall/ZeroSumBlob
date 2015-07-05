@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5459015C268DB93A7A7E965E /* SizableCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54590FFFCE932179C6D599A5 /* SizableCircle.swift */; };
 		545902D7E1DD1EF9655B728E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5459023CB7B72965A1B2CDF2 /* Info.plist */; };
 		545902F9730EAF21A79C510A /* BlobNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54590FF1D97CCDC8DFD27A7A /* BlobNode.swift */; };
 		5459031ECBABCD778B530D0D /* FoodPopulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54590A033B3E0BB4AF98E635 /* FoodPopulator.swift */; };
@@ -52,6 +53,7 @@
 		54590F7DA139BC2A81D0069B /* ZeroSumBlobTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZeroSumBlobTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54590FC3773107182A99114A /* PhysicsCategories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsCategories.swift; sourceTree = "<group>"; };
 		54590FF1D97CCDC8DFD27A7A /* BlobNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlobNode.swift; sourceTree = "<group>"; };
+		54590FFFCE932179C6D599A5 /* SizableCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizableCircle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				54590E80AA0F286598E6BDB5 /* BackgroundNode.swift */,
 				54590AEBC1F7C47A260928DA /* FoodNode.swift */,
 				54590FC3773107182A99114A /* PhysicsCategories.swift */,
+				54590FFFCE932179C6D599A5 /* SizableCircle.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				5459031ECBABCD778B530D0D /* FoodPopulator.swift in Sources */,
 				545903771C9728AB21FBBE10 /* FoodNode.swift in Sources */,
 				5459051A293AE431CE7F546F /* PhysicsCategories.swift in Sources */,
+				5459015C268DB93A7A7E965E /* SizableCircle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
