@@ -48,6 +48,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }[0]
             let food: FoodNode = foodPhysicsBody.node as! FoodNode
             food.removeFromParent()
+            if let background = self.childNodeWithName("background") as? BackgroundNode {
+                FoodPopulator.addRandomFood(background)
+            }
         }
     }
 
