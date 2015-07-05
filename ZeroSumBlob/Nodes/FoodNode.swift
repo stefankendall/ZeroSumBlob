@@ -5,10 +5,14 @@ class FoodNode: SKNode {
     override init() {
         super.init()
 
-        let foodSize = 15
-        let body: SKShapeNode = SKShapeNode(rectOfSize: CGSize(width: foodSize, height: foodSize))
+        let foodLength = 15
+        let foodSize = CGSize(width: foodLength, height: foodLength)
+        let body: SKShapeNode = SKShapeNode(rectOfSize: foodSize)
         body.fillColor = UIColor.blueColor()
         self.addChild(body)
+        self.physicsBody = SKPhysicsBody(rectangleOfSize: foodSize)
+        self.physicsBody?.categoryBitMask = PhysicsCategory.Food
+        self.physicsBody?.collisionBitMask = PhysicsCategory.None
     }
 
     required init?(coder aDecoder: NSCoder) {

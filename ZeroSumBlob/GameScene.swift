@@ -1,6 +1,6 @@
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMoveToView(view: SKView) {
         self.backgroundColor = UIKit.UIColor.clearColor()
 
@@ -14,6 +14,7 @@ class GameScene: SKScene {
         background.addChild(blob)
 
         self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
+        self.physicsWorld.contactDelegate = self
     }
 
     override func update(currentTime: CFTimeInterval) {
@@ -22,7 +23,7 @@ class GameScene: SKScene {
             let converted: CGPoint = self.convertPoint(blob.position, toNode: self)
             let newBackgroundPoint = CGPoint(x: -converted.x + self.size.width / 2,
                     y: -converted.y + self.size.height / 2)
-            background.runAction(SKAction.moveTo(newBackgroundPoint, duration:0.01))
+            background.runAction(SKAction.moveTo(newBackgroundPoint, duration: 0.01))
         }
     }
 
@@ -32,6 +33,22 @@ class GameScene: SKScene {
 
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.moveToward(touches.first!)
+    }
+
+    func didBeginContact(contact: SKPhysicsContact) {
+        let contacts = [contact.bodyA, contact.bodyB]
+        let contactBitMasks = contacts.map {
+            $0.categoryBitMask
+        }
+        if ([PhysicsCategory.Blob, PhysicsCategory.Food].reduce(true) {
+            $0 && contactBitMasks.contains($1)
+        }) {
+            let foodPhysicsBody = contacts.filter {
+                $0.categoryBitMask == PhysicsCategory.Food
+            }[0]
+            let food: FoodNode = foodPhysicsBody.node as! FoodNode
+            food.removeFromParent()
+        }
     }
 
     func moveToward(touch: UITouch) {

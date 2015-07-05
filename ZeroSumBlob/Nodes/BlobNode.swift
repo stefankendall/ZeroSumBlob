@@ -12,6 +12,9 @@ class BlobNode: SKNode {
         super.init()
 
         self.physicsBody = SKPhysicsBody(circleOfRadius: self.blobRadius)
+        self.physicsBody?.categoryBitMask = PhysicsCategory.Blob
+        self.physicsBody?.collisionBitMask = ~PhysicsCategory.Food & ~PhysicsCategory.Blob
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.Food
         self.physicsBody?.linearDamping = 0
         self.physicsBody?.allowsRotation = false
         self.physicsBody?.restitution = 0
