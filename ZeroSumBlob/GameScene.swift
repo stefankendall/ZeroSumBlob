@@ -4,10 +4,10 @@ class GameScene: SKScene {
     override func didMoveToView(view: SKView) {
         self.backgroundColor = UIKit.UIColor.clearColor()
 
-        let background = SKSpriteNode(imageNamed: "background.png")
+        let background = BackgroundNode()
         background.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
-        background.name = "background"
         self.addChild(background)
+        FoodPopulator.seedInitialFood(background)
 
         let blob = BlobNode(color: UIKit.UIColor.greenColor(), playerName: "mr. blob")
         blob.name = "me"

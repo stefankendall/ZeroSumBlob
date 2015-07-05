@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		545902D7E1DD1EF9655B728E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5459023CB7B72965A1B2CDF2 /* Info.plist */; };
 		545902F9730EAF21A79C510A /* BlobNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54590FF1D97CCDC8DFD27A7A /* BlobNode.swift */; };
+		5459031ECBABCD778B530D0D /* FoodPopulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54590A033B3E0BB4AF98E635 /* FoodPopulator.swift */; };
+		545903771C9728AB21FBBE10 /* FoodNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54590AEBC1F7C47A260928DA /* FoodNode.swift */; };
+		545904E500BF3B24A94C8B1C /* BackgroundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54590E80AA0F286598E6BDB5 /* BackgroundNode.swift */; };
 		5459054B2A1B0265A09C8D8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54590185868E22CE3A839475 /* AppDelegate.swift */; };
 		5459057646189FDD8224D9E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54590C005905EB5B1BC520F5 /* LaunchScreen.storyboard */; };
 		545908E33843A10FC522A91F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545908BA69021CC523829E28 /* Assets.xcassets */; };
@@ -39,9 +42,12 @@
 		545908BA69021CC523829E28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		545908F752A5B1282E766A8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		545909F03E2899656FE5BCA8 /* ZeroSumBlobTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroSumBlobTests.swift; sourceTree = "<group>"; };
+		54590A033B3E0BB4AF98E635 /* FoodPopulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodPopulator.swift; sourceTree = "<group>"; };
 		54590A8F8A2604888503FE2A /* UIKColor+Brightness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKColor+Brightness.swift"; sourceTree = "<group>"; };
 		54590AAD34A12DA73A3726FC /* ZeroSumBlob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZeroSumBlob.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		54590AEBC1F7C47A260928DA /* FoodNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodNode.swift; sourceTree = "<group>"; };
 		54590B77DCCE42C32299D7E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		54590E80AA0F286598E6BDB5 /* BackgroundNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundNode.swift; sourceTree = "<group>"; };
 		54590F7DA139BC2A81D0069B /* ZeroSumBlobTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZeroSumBlobTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54590FF1D97CCDC8DFD27A7A /* BlobNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlobNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +78,14 @@
 			path = Colors;
 			sourceTree = "<group>";
 		};
+		5459037CA671642602BDC4D1 /* Food */ = {
+			isa = PBXGroup;
+			children = (
+				54590A033B3E0BB4AF98E635 /* FoodPopulator.swift */,
+			);
+			path = Food;
+			sourceTree = "<group>";
+		};
 		545904098DE7A7EF8F87F095 /* ZeroSumBlobTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				54590FF1D97CCDC8DFD27A7A /* BlobNode.swift */,
+				54590E80AA0F286598E6BDB5 /* BackgroundNode.swift */,
+				54590AEBC1F7C47A260928DA /* FoodNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -110,6 +126,7 @@
 				5459055A7CD52C22843CDA31 /* GameViewController.swift */,
 				5459060F8455866631EC78CE /* Nodes */,
 				545902145B5F0181ECFC30FF /* Colors */,
+				5459037CA671642602BDC4D1 /* Food */,
 			);
 			path = ZeroSumBlob;
 			sourceTree = "<group>";
@@ -228,6 +245,9 @@
 				54590E49CA31051150F13BD9 /* GameViewController.swift in Sources */,
 				545902F9730EAF21A79C510A /* BlobNode.swift in Sources */,
 				54590C256D22D1B78A906E3F /* UIKColor+Brightness.swift in Sources */,
+				545904E500BF3B24A94C8B1C /* BackgroundNode.swift in Sources */,
+				5459031ECBABCD778B530D0D /* FoodPopulator.swift in Sources */,
+				545903771C9728AB21FBBE10 /* FoodNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

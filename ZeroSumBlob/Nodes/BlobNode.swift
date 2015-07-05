@@ -13,6 +13,8 @@ class BlobNode: SKNode {
 
         self.physicsBody = SKPhysicsBody(circleOfRadius: self.blobRadius)
         self.physicsBody?.linearDamping = 0
+        self.physicsBody?.allowsRotation = false
+        self.physicsBody?.restitution = 0
 
         let body: SKShapeNode = SKShapeNode(circleOfRadius: self.blobRadius);
         body.fillColor = blobColor
