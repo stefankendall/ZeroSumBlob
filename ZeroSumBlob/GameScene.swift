@@ -17,13 +17,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.contactDelegate = self
     }
 
-    override func update(currentTime: CFTimeInterval) {
+    override func didSimulatePhysics() {
         if let blob: SKNode = self.childNodeWithName("//me"),
-        let background: SKNode = self.childNodeWithName("background")! {
+        let background: SKNode = self.childNodeWithName("background") {
             let converted: CGPoint = self.convertPoint(blob.position, toNode: self)
             let newBackgroundPoint = CGPoint(x: -converted.x + self.size.width / 2,
                     y: -converted.y + self.size.height / 2)
-            background.runAction(SKAction.moveTo(newBackgroundPoint, duration: 0.01))
+            background.position = newBackgroundPoint
         }
     }
 
