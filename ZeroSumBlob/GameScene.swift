@@ -54,7 +54,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if let blob: BlobNode = blobPhysicsBody.node as? BlobNode,
             let background = self.childNodeWithName("background") as? BackgroundNode {
                 FoodPopulator.addRandomFood(background)
-                blob.addVolume(1)
+                blob.addVolume(20)
+                if(blob.isMaxSize()){
+
+                }
             }
         }
     }
