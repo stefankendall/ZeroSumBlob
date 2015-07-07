@@ -18,12 +18,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
 
     override func didSimulatePhysics() {
-        if let blob: SKNode = self.childNodeWithName("//me"),
-        let background: SKNode = self.childNodeWithName("background") {
-            let converted: CGPoint = self.convertPoint(blob.position, toNode: self)
-            let newBackgroundPoint = CGPoint(x: -converted.x + self.size.width / 2,
-                    y: -converted.y + self.size.height / 2)
-            background.position = newBackgroundPoint
+        if let background: BackgroundNode = self.childNodeWithName("background") as? BackgroundNode {
+            background.followBlob()
         }
     }
 
@@ -53,11 +49,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }[0]
             if let blob: BlobNode = blobPhysicsBody.node as? BlobNode,
             let background = self.childNodeWithName("background") as? BackgroundNode {
-                FoodPopulator.addRandomFood(background)
-                blob.addVolume(20)
-                if(blob.isMaxSize()){
-
-                }
+                blob.addVolume(1)
+//                FoodPopulator.addRandomFood(background)
+                background.zoomForBlobSize(blob.blobRadius, maxBlobRadius: BlobNode.maxBlobRadius)
             }
         }
     }

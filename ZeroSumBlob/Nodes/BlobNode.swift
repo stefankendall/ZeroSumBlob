@@ -5,7 +5,7 @@ import UIKit
 class BlobNode: SKNode {
 
     static let minimumBlobRadius: Float = 15
-    static let maxBlobRadius: Float = 150
+    static let maxBlobRadius: Float = 25
     var blobRadius: Float = minimumBlobRadius
 
     static let maximumMoveSpeed: CGFloat = 200
@@ -65,16 +65,12 @@ class BlobNode: SKNode {
     func addVolume(volume: Int) {
         self.volume += volume
         let radiusIncrease = Float(self.volume)
-        let newRadius = min(round(Float(BlobNode.minimumBlobRadius) + radiusIncrease), BlobNode.maxBlobRadius)
+        let newRadius = round(Float(BlobNode.minimumBlobRadius) + radiusIncrease)
         if (newRadius != self.blobRadius) {
             self.blobRadius = newRadius
             self.updatePhysicsBody()
             let body: SizableCircle = self.childNodeWithName("body") as! SizableCircle
             body.radius = newRadius
         }
-    }
-
-    func isMaxSize() -> Bool {
-        return self.blobRadius > BlobNode.maxBlobRadius
     }
 }
