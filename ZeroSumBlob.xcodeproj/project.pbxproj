@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		545900F30F00496AE5A40295 /* DropShadowLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545906C28DEE24C0E8421C8D /* DropShadowLabelNode.swift */; };
 		5459015C268DB93A7A7E965E /* SizableCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54590FFFCE932179C6D599A5 /* SizableCircle.swift */; };
 		545902D7E1DD1EF9655B728E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5459023CB7B72965A1B2CDF2 /* Info.plist */; };
 		545902F9730EAF21A79C510A /* BlobNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54590FF1D97CCDC8DFD27A7A /* BlobNode.swift */; };
@@ -42,6 +43,7 @@
 		5459023CB7B72965A1B2CDF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		5459055A7CD52C22843CDA31 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		5459059A0FFEB2BD66595E6E /* CameraNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraNode.swift; sourceTree = "<group>"; };
+		545906C28DEE24C0E8421C8D /* DropShadowLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropShadowLabelNode.swift; sourceTree = "<group>"; };
 		545907400860DAD8D043513A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		545908BA69021CC523829E28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		545908F752A5B1282E766A8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				54590FC3773107182A99114A /* PhysicsCategories.swift */,
 				54590FFFCE932179C6D599A5 /* SizableCircle.swift */,
 				5459059A0FFEB2BD66595E6E /* CameraNode.swift */,
+				545906C28DEE24C0E8421C8D /* DropShadowLabelNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				5459051A293AE431CE7F546F /* PhysicsCategories.swift in Sources */,
 				5459015C268DB93A7A7E965E /* SizableCircle.swift in Sources */,
 				5459046AC04FA11E59C68EC4 /* CameraNode.swift in Sources */,
+				545900F30F00496AE5A40295 /* DropShadowLabelNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

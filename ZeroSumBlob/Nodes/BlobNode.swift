@@ -12,6 +12,8 @@ class BlobNode: SKNode {
     var moveSpeed: CGFloat = maximumMoveSpeed
     var volume: Int = 0
 
+    static let fontSizesForScale: Dictionary<Int,CGFloat> = [0: 24, 40: 48]
+
     init(color blobColor: UIColor, playerName: String) {
         super.init()
         self.name = "blob"
@@ -24,10 +26,12 @@ class BlobNode: SKNode {
         body.strokeColor = blobColor.lighterColorWithBrightnessFactor(-0.2)
         self.addChild(body)
 
-        let playerNameLabel = SKLabelNode(text: playerName)
+        let playerNameLabel = DropShadowLabelNode()
+        playerNameLabel.text = playerName
         playerNameLabel.fontName = "AvenirNext-Bold"
-        playerNameLabel.fontSize = 12
+        playerNameLabel.fontSize = BlobNode.fontSizesForScale[0]!
         playerNameLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Center
+        playerNameLabel.addShadow()
         self.addChild(playerNameLabel)
     }
 
