@@ -11,8 +11,8 @@ class FoodPopulator {
         for _ in 1 ... 200 {
             let food: FoodNode = FoodNode()
             background.addChild(food)
-            let x = -paddingWidth / 2 + paddingWidth * CGFloat(Float(arc4random()) / Float(UInt32.max))
-            let y = -paddingHeight / 2 + paddingHeight * CGFloat(Float(arc4random()) / Float(UInt32.max))
+            let x = -paddingWidth / 2 + paddingWidth * CGFloat(RandomHelper.between0and1())
+            let y = -paddingHeight / 2 + paddingHeight * CGFloat(RandomHelper.between0and1())
             food.position = CGPoint(x: x, y: y)
         }
     }

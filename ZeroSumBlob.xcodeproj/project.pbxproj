@@ -18,6 +18,7 @@
 		5459051A293AE431CE7F546F /* PhysicsCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54590FC3773107182A99114A /* PhysicsCategories.swift */; };
 		5459054B2A1B0265A09C8D8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54590185868E22CE3A839475 /* AppDelegate.swift */; };
 		5459057646189FDD8224D9E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54590C005905EB5B1BC520F5 /* LaunchScreen.storyboard */; };
+		545906F2129F608EC87C0A1C /* RandomHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54590065640F816F9863DE23 /* RandomHelper.swift */; };
 		545908E33843A10FC522A91F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 545908BA69021CC523829E28 /* Assets.xcassets */; };
 		54590BBDBA7B4C97D75EE394 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545907400860DAD8D043513A /* GameScene.swift */; };
 		54590C159CA2170266A59EA4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 545900F101D1F13BAEF52F06 /* Info.plist */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		54590065640F816F9863DE23 /* RandomHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomHelper.swift; sourceTree = "<group>"; };
 		545900F101D1F13BAEF52F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		54590185868E22CE3A839475 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5459023CB7B72965A1B2CDF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				54590A033B3E0BB4AF98E635 /* FoodPopulator.swift */,
+				54590065640F816F9863DE23 /* RandomHelper.swift */,
 			);
 			path = Food;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				5459015C268DB93A7A7E965E /* SizableCircle.swift in Sources */,
 				5459046AC04FA11E59C68EC4 /* CameraNode.swift in Sources */,
 				545900F30F00496AE5A40295 /* DropShadowLabelNode.swift in Sources */,
+				545906F2129F608EC87C0A1C /* RandomHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
