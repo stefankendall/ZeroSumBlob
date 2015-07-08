@@ -6,13 +6,12 @@ class BlobNode: SKNode {
 
     static let minimumBlobRadius: Float = 15
     static let maxBlobRadius: Float = 25
+    static let minimumFontSize: Float = 24
     var blobRadius: Float = minimumBlobRadius
 
     static let maximumMoveSpeed: CGFloat = 200
     var moveSpeed: CGFloat = maximumMoveSpeed
     var volume: Int = 0
-
-    static let fontSizesForScale: Dictionary<Int,CGFloat> = [0: 24, 40: 48]
 
     init(color blobColor: UIColor, playerName: String) {
         super.init()
@@ -27,9 +26,10 @@ class BlobNode: SKNode {
         self.addChild(body)
 
         let playerNameLabel = DropShadowLabelNode()
+        playerNameLabel.name = "name"
         playerNameLabel.text = playerName
         playerNameLabel.fontName = "AvenirNext-Bold"
-        playerNameLabel.fontSize = BlobNode.fontSizesForScale[0]!
+        playerNameLabel.fontSize = CGFloat(max(BlobNode.minimumFontSize, self.blobRadius / 2))
         playerNameLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Center
         playerNameLabel.addShadow()
         self.addChild(playerNameLabel)
@@ -75,6 +75,9 @@ class BlobNode: SKNode {
             self.updatePhysicsBody()
             let body: SizableCircle = self.childNodeWithName("body") as! SizableCircle
             body.radius = newRadius
+
+            let playerNameLabel: SKLabelNode = self.childNodeWithName("name") as! SKLabelNode
+            playerNameLabel.fontSize = CGFloat(max(BlobNode.minimumFontSize, self.blobRadius / 2))
         }
     }
 }
