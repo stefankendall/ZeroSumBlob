@@ -11,15 +11,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
         let blob = BlobNode(color: UIKit.UIColor.greenColor(), playerName: "mr. blob")
         blob.name = "me"
+        blob.position = CGPoint(x: 0, y: 0)
         background.addChild(blob)
+
+        let camera: CameraNode = CameraNode()
+        self.addChild(camera)
+        self.camera = camera
 
         self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         self.physicsWorld.contactDelegate = self
     }
 
     override func didSimulatePhysics() {
-        if let background: BackgroundNode = self.childNodeWithName("background") as? BackgroundNode {
-            background.followBlob()
+        if let blob: BlobNode = self.childNodeWithName("//me") as? BlobNode {
+            self.camera?.position = CGPoint(x: self.size.width / 2 + blob.position.x / self.camera!.xScale,
+                    y: self.size.height / 2 + blob.position.y / self.camera!.yScale)
         }
     }
 
@@ -42,16 +48,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let foodPhysicsBody = contacts.filter {
                 $0.categoryBitMask == PhysicsCategory.Food
             }[0]
+            var foodValue = 1
+            if let foodNode: FoodNode = foodPhysicsBody.node as? FoodNode {
+                foodValue = foodNode.value
+            }
             foodPhysicsBody.node?.removeFromParent()
 
             let blobPhysicsBody = contacts.filter {
                 $0.categoryBitMask == PhysicsCategory.Blob
             }[0]
             if let blob: BlobNode = blobPhysicsBody.node as? BlobNode,
-            let background = self.childNodeWithName("background") as? BackgroundNode {
-                blob.addVolume(1)
-//                FoodPopulator.addRandomFood(background)
-                background.zoomForBlobSize(blob.blobRadius, maxBlobRadius: BlobNode.maxBlobRadius)
+            let background = self.childNodeWithName("background") as? BackgroundNode,
+            let camera = self.childNodeWithName("camera") as? CameraNode {
+                blob.addVolume(foodValue)
+                FoodPopulator.addRandomFood(background)
+                camera.zoomForBlobSize(blob.blobRadius, maxBlobRadius: BlobNode.maxBlobRadius)
             }
         }
     }

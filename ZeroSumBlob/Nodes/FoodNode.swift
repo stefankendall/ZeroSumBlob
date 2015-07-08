@@ -2,6 +2,8 @@ import Foundation
 import SpriteKit
 
 class FoodNode: SKNode {
+    var value: Int = 1
+
     override init() {
         super.init()
 
