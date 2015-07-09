@@ -10,7 +10,9 @@ class BlobNode: SKNode {
     var blobRadius: Float = minimumBlobRadius
 
     static let maximumMoveSpeed: CGFloat = 400
+    static let minimumMoveSpeed: CGFloat = 100
     var moveSpeed: CGFloat = maximumMoveSpeed
+    var movementAngle: CGFloat = 0
     var volume: Int = 0
 
     init(color blobColor: SKColor, playerName: String) {
@@ -57,13 +59,17 @@ class BlobNode: SKNode {
         let dx: CGFloat = point.x - self.position.x
         let dy: CGFloat = point.y - self.position.y
         let distance = hypot(dx, dy)
-        let angle = atan2(dy, dx)
+        self.movementAngle = atan2(dy, dx)
 
         if (distance < CGFloat(self.blobRadius)) {
-            self.physicsBody?.velocity = CGVector(dx: distance * cos(angle), dy: distance * sin(angle))
+            self.physicsBody?.velocity = CGVector(dx: distance * cos(self.movementAngle), dy: distance * sin(self.movementAngle))
         } else {
-            self.physicsBody?.velocity = CGVector(dx: self.moveSpeed * cos(angle), dy: self.moveSpeed * sin(angle))
+            self.setVelocityAlongMovementAngle()
         }
+    }
+
+    func setVelocityAlongMovementAngle() {
+        self.physicsBody?.velocity = CGVector(dx: self.moveSpeed * cos(self.movementAngle), dy: self.moveSpeed * sin(self.movementAngle))
     }
 
     func addVolume(volume: Int) {
@@ -78,6 +84,9 @@ class BlobNode: SKNode {
 
             let playerNameLabel: SKLabelNode = self.childNodeWithName("name") as! SKLabelNode
             playerNameLabel.fontSize = CGFloat(max(BlobNode.minimumFontSize, self.blobRadius / 2))
+
+            self.moveSpeed = max(BlobNode.minimumMoveSpeed, BlobNode.maximumMoveSpeed - CGFloat(self.volume))
+            self.setVelocityAlongMovementAngle()
         }
     }
 }

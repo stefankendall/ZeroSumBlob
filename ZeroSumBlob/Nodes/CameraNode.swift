@@ -17,9 +17,11 @@ class CameraNode: SKCameraNode {
             $0 > $1
         }) {
             let boundaryScale: CGFloat = CGFloat(radiusScales[boundarySize]!)
-            if (blobRadius > Float(boundarySize) && self.xScale != boundaryScale) {
-                self.removeActionForKey("scale")
-                self.runAction(SKAction.scaleTo(boundaryScale, duration: 1), withKey: "scale")
+            if (blobRadius > Float(boundarySize)) {
+                if (fabs(self.xScale - boundaryScale) > 0.01) {
+                    self.removeActionForKey("scale")
+                    self.runAction(SKAction.scaleTo(boundaryScale, duration: 1), withKey: "scale")
+                }
                 break
             }
         }
