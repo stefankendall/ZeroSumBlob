@@ -9,7 +9,7 @@ class BlobNode: SKNode {
     static let minimumFontSize: Float = 24
     var blobRadius: Float = minimumBlobRadius
 
-    static let maximumMoveSpeed: CGFloat = 200
+    static let maximumMoveSpeed: CGFloat = 400
     var moveSpeed: CGFloat = maximumMoveSpeed
     var volume: Int = 0
 

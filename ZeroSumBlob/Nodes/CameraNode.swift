@@ -1,7 +1,7 @@
 import Foundation
 import SpriteKit
 
-class CameraNode : SKCameraNode {
+class CameraNode: SKCameraNode {
     override init() {
         super.init()
         self.name = "camera"
@@ -16,8 +16,10 @@ class CameraNode : SKCameraNode {
         for boundarySize in (radiusScales.keys.array.sort {
             $0 > $1
         }) {
-            if (blobRadius > Float(boundarySize)) {
-                self.runAction(SKAction.scaleTo(CGFloat(radiusScales[boundarySize]!), duration: 1))
+            let boundaryScale: CGFloat = CGFloat(radiusScales[boundarySize]!)
+            if (blobRadius > Float(boundarySize) && self.xScale != boundaryScale) {
+                self.removeActionForKey("scale")
+                self.runAction(SKAction.scaleTo(boundaryScale, duration: 1), withKey: "scale")
                 break
             }
         }
