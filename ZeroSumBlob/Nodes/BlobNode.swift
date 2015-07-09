@@ -13,7 +13,7 @@ class BlobNode: SKNode {
     var moveSpeed: CGFloat = maximumMoveSpeed
     var volume: Int = 0
 
-    init(color blobColor: UIColor, playerName: String) {
+    init(color blobColor: SKColor, playerName: String) {
         super.init()
         self.name = "blob"
         self.zPosition = 1

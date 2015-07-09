@@ -9,7 +9,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(background)
         FoodPopulator.seedInitialFood(background)
 
-        let blob = BlobNode(color: UIKit.UIColor.greenColor(), playerName: "mr. blob")
+        let blob = BlobNode(color: RandomHelper.randomColor(), playerName: "mr. blob")
         blob.name = "me"
         blob.position = CGPoint(x: 0, y: 0)
         background.addChild(blob)
