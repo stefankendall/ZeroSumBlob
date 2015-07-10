@@ -62,7 +62,15 @@ class BlobNode: SKNode {
         self.movementAngle = atan2(dy, dx)
 
         if (distance < CGFloat(self.blobRadius)) {
-            self.physicsBody?.velocity = CGVector(dx: distance * cos(self.movementAngle), dy: distance * sin(self.movementAngle))
+            let ratioFromEdge = Float(distance) / self.blobRadius
+            if( ratioFromEdge < 0.2 ){
+                self.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            }
+            else {
+                let dx = ratioFromEdge * Float(cos(self.movementAngle)) * Float(self.moveSpeed)
+                let dy = ratioFromEdge * Float(sin(self.movementAngle)) * Float(self.moveSpeed)
+                self.physicsBody?.velocity = CGVector(dx: CGFloat(dx), dy: CGFloat(dy))
+            }
         } else {
             self.setVelocityAlongMovementAngle()
         }
