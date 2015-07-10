@@ -12,7 +12,7 @@ class CameraNode: SKCameraNode {
     }
 
     func zoomForBlobSize(blobRadius: Float, maxBlobRadius: Float) {
-        let radiusScales = [80: 1.5, 120: 2, 160: 2.5, 0: 1]
+        let radiusScales = [80: 1.5, 120: 2, 160: 2.25, 0: 1]
         for boundarySize in (radiusScales.keys.array.sort {
             $0 > $1
         }) {

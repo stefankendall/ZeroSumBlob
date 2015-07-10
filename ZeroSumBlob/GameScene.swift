@@ -24,8 +24,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     override func didSimulatePhysics() {
         if let blob: BlobNode = self.childNodeWithName("//me") as? BlobNode {
-            self.camera?.position = CGPoint(x: self.size.width / 2 + blob.position.x / self.camera!.xScale,
-                    y: self.size.height / 2 + blob.position.y / self.camera!.yScale)
+            let position: CGPoint = self.convertPoint(blob.position, fromNode: blob.parent!)
+            self.camera?.position = position
         }
     }
 
