@@ -11,9 +11,57 @@ class BlobNode: SKNode {
 
     static let maximumMoveSpeed: CGFloat = 400
     static let minimumMoveSpeed: CGFloat = 100
+
+    static let blobEdgeWidth: Float = 3
+
     var moveSpeed: CGFloat = maximumMoveSpeed
     var movementAngle: CGFloat = 0
     var volume: Int = 0
+
+    var splitting: Bool = false {
+        didSet {
+            if (splitting) {
+                self.startSplitting()
+            } else {
+                self.stopSplitting()
+            }
+        }
+    }
+
+    func startSplitting() {
+        self.removeSplittingOverlay()
+        let splitOverlay: SizableCircle = SizableCircle(radius: self.blobRadius + Float(BlobNode.blobEdgeWidth))
+        splitOverlay.fillColor = UIColor.blackColor()
+        splitOverlay.alpha = 0.3
+        splitOverlay.name = "overlay"
+        splitOverlay.setScale(0.3)
+        splitOverlay.zPosition = 50
+        self.addChild(splitOverlay)
+        splitOverlay.runAction(
+        SKAction.sequence([
+                SKAction.scaleTo(1, duration: 0.5),
+                SKAction.runBlock({
+                    if (self.splitting) {
+                        self.split()
+                    }
+                })
+        ])
+        )
+    }
+
+    func split() {
+        NSLog("Split")
+    }
+
+    func stopSplitting() {
+        self.removeSplittingOverlay()
+    }
+
+    func removeSplittingOverlay() {
+        if let overlay = self.childNodeWithName("overlay") {
+            overlay.removeFromParent()
+        }
+    }
 
     init(color blobColor: SKColor, playerName: String) {
         super.init()
@@ -63,10 +111,9 @@ class BlobNode: SKNode {
 
         if (distance < CGFloat(self.blobRadius)) {
             let ratioFromEdge = Float(distance) / self.blobRadius
-            if( ratioFromEdge < 0.2 ){
+            if (ratioFromEdge < 0.2) {
                 self.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
-            }
-            else {
+            } else {
                 let dx = ratioFromEdge * Float(cos(self.movementAngle)) * Float(self.moveSpeed)
                 let dy = ratioFromEdge * Float(sin(self.movementAngle)) * Float(self.moveSpeed)
                 self.physicsBody?.velocity = CGVector(dx: CGFloat(dx), dy: CGFloat(dy))
@@ -89,6 +136,10 @@ class BlobNode: SKNode {
             self.updatePhysicsBody()
             let body: SizableCircle = self.childNodeWithName("body") as! SizableCircle
             body.radius = newRadius
+
+            if let splitOverlay = self.childNodeWithName("overlay") as? SizableCircle {
+                splitOverlay.radius = newRadius + BlobNode.blobEdgeWidth
+            }
 
             let playerNameLabel: SKLabelNode = self.childNodeWithName("name") as! SKLabelNode
             playerNameLabel.fontSize = CGFloat(max(BlobNode.minimumFontSize, self.blobRadius / 2))

@@ -1,6 +1,9 @@
 import SpriteKit
+import UIKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
+    var contactQueue: [SKPhysicsContact] = []
+
     override func didMoveToView(view: SKView) {
         self.backgroundColor = UIKit.UIColor.clearColor()
 
@@ -30,14 +33,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.moveToward(touches.first!)
+        if (touches.count == 1) {
+            self.moveToward(touches.first!)
+        }
+        else {
+            if let me: BlobNode = self.childNodeWithName("//me") as? BlobNode {
+                me.splitting = true
+            }
+        }
     }
 
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.moveToward(touches.first!)
+        if (touches.count == 1) {
+            self.moveToward(touches.first!)
+        }
     }
 
-    func didBeginContact(contact: SKPhysicsContact) {
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let me: BlobNode = self.childNodeWithName("//me") as? BlobNode {
+            me.splitting = false
+        }
+    }
+
+    override func update(currentTime: NSTimeInterval) {
+        super.update(currentTime)
+        for contact: SKPhysicsContact in self.contactQueue {
+            self.handleContact(contact)
+        }
+    }
+
+    func handleContact(contact: SKPhysicsContact) {
         let contacts = [contact.bodyA, contact.bodyB]
         let contactBitMasks = contacts.map {
             $0.categoryBitMask
@@ -65,6 +90,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 camera.zoomForBlobSize(blob.blobRadius, maxBlobRadius: BlobNode.maxBlobRadius)
             }
         }
+    }
+
+    func didBeginContact(contact: SKPhysicsContact) {
+        self.contactQueue.append(contact)
     }
 
     func moveToward(touch: UITouch) {

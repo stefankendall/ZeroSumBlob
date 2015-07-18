@@ -13,6 +13,7 @@ class GameViewController: UIViewController {
         skView.showsFPS = true
         skView.ignoresSiblingOrder = true
         skView.presentScene(scene)
+        self.view.multipleTouchEnabled = true
     }
 
     override func shouldAutorotate() -> Bool {
