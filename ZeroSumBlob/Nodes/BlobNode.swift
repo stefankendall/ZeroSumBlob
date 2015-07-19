@@ -2,14 +2,16 @@ import Foundation
 import SpriteKit
 import UIKit
 
- let DEBUG_START_BIG = true
- let START_BIG_RADIUS : Float = 30
+let DEBUG_START_BIG = true
+let START_BIG_RADIUS: Float = 30
 
 class BlobNode: SKNode {
 
     static let minimumBlobRadius: Float = DEBUG_START_BIG ? START_BIG_RADIUS : 15
     static let minimumFontSize: Float = 24
     var blobRadius: Float = minimumBlobRadius
+    var blobColor: UIColor = UIColor.clearColor()
+    var playerName: String = ""
 
     static let maximumMoveSpeed: CGFloat = 400
     static let minimumMoveSpeed: CGFloat = 100
@@ -52,7 +54,14 @@ class BlobNode: SKNode {
     }
 
     func split() {
-        NSLog("Split")
+        let splitNode: BlobNode = BlobNode(color: self.blobColor, playerName: self.playerName)
+        splitNode.addVolume(self.volume / 2)
+        splitNode.name = "me"
+        self.addVolume(-self.volume / 2)
+        splitNode.position = self.position
+        self.parent?.addChild(splitNode)
+
+        self.splitting = false
     }
 
     func stopSplitting() {
@@ -69,6 +78,8 @@ class BlobNode: SKNode {
         super.init()
         self.name = "blob"
         self.zPosition = 1
+        self.blobColor = blobColor
+        self.playerName = playerName
         self.updatePhysicsBody()
         let body: SizableCircle = SizableCircle(radius: self.blobRadius)
         body.name = "body"
@@ -132,7 +143,7 @@ class BlobNode: SKNode {
     func addVolume(volume: Int) {
         self.volume += volume
         let radiusIncrease = Float(self.volume)
-        let newRadius = round(Float(BlobNode.minimumBlobRadius) + radiusIncrease)
+        let newRadius = max(round(Float(BlobNode.minimumBlobRadius) + radiusIncrease), BlobNode.minimumBlobRadius)
         if (newRadius != self.blobRadius) {
             self.blobRadius = newRadius
             self.updatePhysicsBody()
