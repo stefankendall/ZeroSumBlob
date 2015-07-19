@@ -3,16 +3,16 @@ import SpriteKit
 import UIKit
 
 let DEBUG_START_BIG = true
-let START_BIG_RADIUS: Float = 30
+let START_BIG_VOLUME: Int = 20
 
 class BlobNode: SKNode {
-    static let minimumBlobRadius: Float = DEBUG_START_BIG ? START_BIG_RADIUS : 15
+    static let minimumBlobRadius: Float = 15
     static let minimumFontSize: Float = 24
     var blobRadius: Float = minimumBlobRadius
     var blobColor: UIColor = UIColor.clearColor()
     var playerName: String = ""
 
-    static let maximumMoveSpeed: CGFloat = 400
+    static let maximumMoveSpeed: CGFloat = 300
     static let minimumMoveSpeed: CGFloat = 100
 
     static let blobEdgeWidth: Float = 3
@@ -95,6 +95,7 @@ class BlobNode: SKNode {
         playerNameLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Center
         playerNameLabel.addShadow()
         self.addChild(playerNameLabel)
+        self.addVolume(DEBUG_START_BIG ? START_BIG_VOLUME : 0)
     }
 
     func updatePhysicsBody() {
@@ -103,7 +104,7 @@ class BlobNode: SKNode {
         if let velocity = velocity {
             self.physicsBody?.velocity = velocity
         }
-        self.physicsBody?.categoryBitMask = PhysicsCategory.Blob
+        self.physicsBody?.categoryBitMask = PhysicsCategory.MyBlob
         self.physicsBody?.collisionBitMask = ~PhysicsCategory.Food & ~PhysicsCategory.Blob
         self.physicsBody?.contactTestBitMask = PhysicsCategory.Food
         self.physicsBody?.linearDamping = 0
@@ -156,7 +157,7 @@ class BlobNode: SKNode {
             let playerNameLabel: SKLabelNode = self.childNodeWithName("name") as! SKLabelNode
             playerNameLabel.fontSize = CGFloat(max(BlobNode.minimumFontSize, self.blobRadius / 2))
 
-            self.moveSpeed = max(BlobNode.minimumMoveSpeed, BlobNode.maximumMoveSpeed - CGFloat(self.volume))
+            self.moveSpeed = max(BlobNode.minimumMoveSpeed, BlobNode.maximumMoveSpeed - 3 * CGFloat(self.volume))
             self.setVelocityAlongMovementAngle()
         }
     }

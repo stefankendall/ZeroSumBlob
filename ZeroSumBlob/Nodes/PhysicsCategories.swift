@@ -5,4 +5,5 @@ struct PhysicsCategory {
     static let All: UInt32 = UInt32.max
     static let Blob: UInt32 = 0b1
     static let Food: UInt32 = 0b10
+    static let MyBlob: UInt32 = 0b100
 }

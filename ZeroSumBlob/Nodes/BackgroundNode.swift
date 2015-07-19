@@ -11,6 +11,7 @@ class BackgroundNode: SKNode {
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.calculateAccumulatedFrame())
         self.physicsBody?.dynamic = false
         self.physicsBody?.restitution = 0
+        self.physicsBody?.friction = 0.05
     }
 
     required init?(coder aDecoder: NSCoder) {

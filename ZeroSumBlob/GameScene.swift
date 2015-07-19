@@ -66,7 +66,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let contactBitMasks = contacts.map {
             $0.categoryBitMask
         }
-        if ([PhysicsCategory.Blob, PhysicsCategory.Food].reduce(true) {
+        if ([PhysicsCategory.MyBlob, PhysicsCategory.Food].reduce(true) {
             $0 && contactBitMasks.contains($1)
         }) {
             let foodPhysicsBody = contacts.filter {
@@ -79,7 +79,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             foodPhysicsBody.node?.removeFromParent()
 
             let blobPhysicsBody = contacts.filter {
-                $0.categoryBitMask == PhysicsCategory.Blob
+                $0.categoryBitMask == PhysicsCategory.MyBlob
             }[0]
             if let blob: BlobNode = blobPhysicsBody.node as? BlobNode,
             let background = self.childNodeWithName("background") as? BackgroundNode,
