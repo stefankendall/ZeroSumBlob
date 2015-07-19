@@ -87,7 +87,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let camera = self.childNodeWithName("camera") as? CameraNode {
                 blob.addVolume(foodValue)
                 FoodPopulator.addRandomFood(background)
-                camera.zoomForBlobSize(blob.blobRadius, maxBlobRadius: BlobNode.maxBlobRadius)
+                camera.zoomForBlobSize(blob.blobRadius)
             }
         }
     }

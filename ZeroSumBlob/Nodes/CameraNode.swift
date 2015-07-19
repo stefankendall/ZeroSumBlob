@@ -11,7 +11,7 @@ class CameraNode: SKCameraNode {
         fatalError("Not implemented")
     }
 
-    func zoomForBlobSize(blobRadius: Float, maxBlobRadius: Float) {
+    func zoomForBlobSize(blobRadius: Float) {
         let radiusScales = [80: 1.5, 120: 2, 160: 2.25, 0: 1]
         for boundarySize in (radiusScales.keys.array.sort {
             $0 > $1

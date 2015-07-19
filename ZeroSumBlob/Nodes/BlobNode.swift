@@ -2,10 +2,12 @@ import Foundation
 import SpriteKit
 import UIKit
 
+ let DEBUG_START_BIG = true
+ let START_BIG_RADIUS : Float = 30
+
 class BlobNode: SKNode {
 
-    static let minimumBlobRadius: Float = 15
-    static let maxBlobRadius: Float = 25
+    static let minimumBlobRadius: Float = DEBUG_START_BIG ? START_BIG_RADIUS : 15
     static let minimumFontSize: Float = 24
     var blobRadius: Float = minimumBlobRadius
 
