@@ -26,9 +26,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
 
     override func didSimulatePhysics() {
-        if let blob: BlobNode = self.childNodeWithName("//me") as? BlobNode {
-            let position: CGPoint = self.convertPoint(blob.position, fromNode: blob.parent!)
-            self.camera?.position = position
+        if let camera: CameraNode = self.camera as? CameraNode {
+            var blobs: [SKNode] = []
+            self.enumerateChildNodesWithName("//me") {
+                (blob: SKNode!, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
+                blobs.append(blob)
+            }
+            camera.follow(blobs)
         }
     }
 

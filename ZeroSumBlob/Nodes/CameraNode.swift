@@ -26,4 +26,15 @@ class CameraNode: SKCameraNode {
             }
         }
     }
+
+    func follow(blobs: [SKNode]) {
+        var midPoint: CGPoint = CGPoint(x: 0, y: 0)
+        for node: SKNode in blobs {
+            let converted: CGPoint = self.parent!.convertPoint(node.position, fromNode: node.parent!)
+            midPoint = CGPoint(x: midPoint.x + converted.x, y: midPoint.y + converted.y)
+        }
+        let midX = Float(midPoint.x) / Float(blobs.count)
+        let midY = Float(midPoint.y) / Float(blobs.count)
+        self.position = CGPoint(x: CGFloat(midX), y: CGFloat(midY))
+    }
 }
