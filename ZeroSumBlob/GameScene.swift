@@ -36,8 +36,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if (touches.count == 1) {
             self.moveToward(touches.first!)
         } else {
-            if let me: BlobNode = self.childNodeWithName("//me") as? BlobNode {
-                me.splitting = true
+            self.enumerateChildNodesWithName("//me") {
+                (blob: SKNode!, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
+                (blob as! BlobNode).splitting = true
             }
         }
     }
@@ -49,8 +50,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
 
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if let me: BlobNode = self.childNodeWithName("//me") as? BlobNode {
-            me.splitting = false
+        self.enumerateChildNodesWithName("//me") {
+            (blob: SKNode!, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
+            (blob as! BlobNode).splitting = false
         }
     }
 
